@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kosmai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+    <img src="images/logo_bgrmv.png" class="logo" alt="Kosmiai Logo" />
+    <nav>
+        <a href="#about">About</a>
+        <a href="#team">Team</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- ABOUT -->
+<section id="about" section class="hero">
+    <div class="hero-content">
+        <h1>“We untangle AI complexity so organizations can act quickly, safely, and confidently.”</h1>
+    </div>
+</section>
+
+
+<!-- TEAM -->
+<section id="team" class="page-section">
+    <h2>Our Team</h2>
+    <div class="team-container">
+
+        <!-- RANJANA -->
+        <div class="flip-card">
+            <div class="flip-inner">
+                
+                <!-- FRONT -->
+                <div class="flip-front">
+                    <img src="images/ranjana.jpeg" alt="Ranjana" />
+                    <h3>Ranjana Nagi</h3>
+                    <p class="role">Policy / Governance / PHAC, AI Adoption Pilots</p>
+                </div>
+                
+                <!-- BACK -->
+                <div class="flip-back">
+                    <h3>Ranjana Nagi</h3>
+                    <p>
+                        <i>Ranjana’s bio goes here...</i>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CAMILLA -->
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+                <div class="flip-front">
+                    <img src="images/camilla.jpeg" alt="Camilla Balbis">
+                    <h3>Camilla Balbis</h3>
+                    <p class="role">AI Product & Governance, AI Policy Research</p>
+                </div>
+
+                <!-- BACK -->
+                <div class="flip-back">
+                    <h3>Camilla Balbis</h3>
+                    <p>
+                        <i>Camilla blends product strategy and governance expertise to help organizations navigate the AI era with clarity. She scaled AI deployments across three continents at GrowDoc and contributes to national AI security policy with AIGS Canada. Trilingual and globally experienced, she bridges strategy, partnerships, and execution.</i>
+
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- SANDEEP -->
+        <div class="flip-card">
+            <div class="flip-inner">
+
+                <!-- FRONT -->
+                <div class="flip-front">
+                    <img src="images/sandeep.jfif" alt="Sandeep" />
+                    <h3>Sandeep</h3>
+                    <p class="role">Technical Lead</p>
+                </div>
+
+                <!-- BACK -->
+                <div class="flip-back">
+                    <h3>Sandeep</h3>
+                    <p>
+                        <i>Sandeep is a Technical Lead and consultant with 5+ years of experience building scalable machine learning and data solutions for clients. With an academic background in AI and research in deep learning and computer vision, she bridges advanced technical insight with practical, business-focused implementation across diverse projects.</i>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SERVICES SECTION -->
+<section id="services" class="services-section">
+    <div class="services-container">
+
+        <div class="service-card">
+            <img src="images/service1.jpg" alt="">
+            <h3>Governance & Strategy</h3>
+            <p>Develop comprehensive AI strategies aligned with your business objectives and organizational capabilities.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="images/service2.jpg" alt="">
+            <h3>Digitization</h3>
+            <p>Guide your organization through successful pilot programs and full-scale deployment of AI solutions.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="images/service3.jpg" alt="">
+            <h3>Enablement & Training</h3>
+            <p>Evaluate your organization's preparedness for AI adoption across infrastructure, data, and talent dimensions.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- CONTACT -->
+<section id="contact" class="page-section">
+    <h2>Contact Us</h2>
+
+    <form action="https://formspree.io/f/mdkbrlaq" method="POST" class="contact-grid">
+
+        <!-- FIRST NAME -->
+        <label for="first_name">First Name (required)</label>
+        <input type="text" id="first_name" name="first_name" required />
+
+        <!-- LAST NAME -->
+        <label for="last_name">Last Name (required)</label>
+        <input type="text" id="last_name" name="last_name" required />
+
+        <!-- EMAIL -->
+        <label for="email">Email (required)</label>
+        <input type="email" id="email" name="email" required />
+
+        <!-- PHONE -->
+        <label for="phone">Phone (required)</label>
+        <input type="text" id="phone" name="phone" required />
+
+        <!-- COMPANY NAME -->
+        <label for="company_name">Company Name (required)</label>
+        <input type="text" id="company_name" name="company_name" required />
+
+        <!-- COMPANY EMAIL -->
+        <label for="company_email">Company Email (required)</label>
+        <input type="email" id="company_email" name="company_email" required />
+
+        <!-- JOB TITLE -->
+        <label for="job_title">Job Title (required)</label>
+        <input type="text" id="job_title" name="job_title" required />
+
+        <!-- INTERESTED SERVICES -->
+         <label>Interested Services</label>
+         <div class="service-buttons">
+            <button type="button" class="service-btn" data-value="Governance & Strategy">Governance & Strategy</button>
+            <button type="button" class="service-btn" data-value="Digitization">Digitization</button>
+            <button type="button" class="service-btn" data-value="Enablement & Training">Enablement & Training</button>
+        </div>
+        
+        <!-- Hidden input to store selected values for Formspree -->
+         <input type="hidden" name="services" id="servicesInput">
+        
+        <!-- MESSAGE -->
+        <label for="message">Share with us a bit more detail about your requirements</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <!-- SUBMIT -->
+        <button type="submit">Send</button>
+
+    </form>
+</section>
+
+
+
+<footer>
+© 2024 - <span id="year"></span> Sandeep. All Rights Reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

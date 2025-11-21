@@ -1,0 +1,376 @@
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    
+    color: #0d1b2a;
+    scroll-behavior: smooth;
+    background: #6f8790 !important;  /* unified page background */
+    overflow-x: hidden;
+    font-family: 'Lora', serif;
+}
+
+
+
+/* === FROSTED TRANSLUCENT NEBULA HEADER === */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+
+    /* Soft teal nebula gradient with transparency */
+    background: linear-gradient(
+        to bottom,
+        rgba(25, 51, 65, 0.626) 10%,   /* light mist */
+        rgba(63, 107, 141, 0.55) 50%,  /* teal mid haze */
+        rgba(171, 203, 224, 0.4) 100%   /* deeper nebula */
+    );
+
+    /* Frosted glass blur */
+    backdrop-filter: blur(700px);
+    -webkit-backdrop-filter: blur(10px);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    /* Softer shadow that matches nebula aesthetic */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Make logo larger without changing header height */
+.logo {
+    height: 140px;
+    transform: scale(1.15);
+    object-fit: contain;
+    margin-top: -10px; /* tiny adjustment to keep centered */
+}
+
+
+
+
+
+
+nav a {
+    margin-left: 32px;
+    text-decoration: none;
+    color: #0d1b2a;
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 1.25rem;   /* Increase size */
+    letter-spacing: 0.5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    background: url('images/hero-bg.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Lora', serif;
+    font-size: 4rem;            /* bigger */
+    font-weight: 500;
+    color: #ffffff;
+    max-width: 1000px;
+    line-height: 1.25;
+    opacity: 0;                /* needed for animation */
+    animation: fadeInUp 1.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* PAGE SECTIONS */
+.page-section {
+    padding: 80px 20px;
+    text-align: center;
+    background: transparent !important;   /* <-- FIX */
+    margin: 40px auto;
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.page-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.page-section p, .page-section ul {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+
+.team-section,
+.services-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.team-container,
+.services-container {
+    max-width: 1400px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* TEAM SECTION */
+/* === TEAM FLIP CARDS === */
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.flip-card {
+    width: 260px;
+    height: 400px;
+    perspective: 1200px;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 2s ease;
+    cursor: pointer;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* FRONT + BACK shared */
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    background: #f4f4f4;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    
+}
+
+/* FRONT SIDE */
+.flip-front img {
+    width: 100%;
+    border-radius: 50%;
+    height: 260px;
+    object-fit: cover;
+}
+
+/* BACK SIDE */
+.flip-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    padding-top: 30px;
+}
+
+
+/* === SERVICES SECTION === */
+.services-section {
+    width: 100%;
+    padding: 80px 20px; /* prevents right overflow */
+    background: #ffffff00;
+    display: flex;
+    justify-content: center; /* aligns container */
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1400px; /* matches team cards */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(4px);
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #fff;
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.service-card img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #0d1b2a;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #243447;
+    line-height: 1.5;
+}
+
+
+
+
+
+/* RESPONSIVE FIXES — Services grid */
+@media (max-width: 1200px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+/* CONTACT FORM */
+form {
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+}
+
+/* CONTACT FORM FIXES */
+form input,
+form textarea,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #000 !important;
+    background: #fff !important;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #555;
+}
+
+/* Autofill fix */
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+    -webkit-text-fill-color: #000 !important;
+    box-shadow: 0 0 0px 1000px #fff inset !important;
+}
+
+/* SERVICE BUTTONS */
+.service-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 10px 0 20px 0;
+}
+
+.service-btn {
+    padding: 10px 16px;
+    border: 1px solid #bbb;
+    background: #ffffff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    color: #000;
+}
+
+.service-btn.selected {
+    background: #d3d3d3;
+    border-color: #555;
+}
+
+
+
+
+/* FOOTER */
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        margin-left: 12px;
+        font-size: 1rem;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    .page-section {
+        width: 100%;
+        padding: 60px 15px;
+    }
+}
