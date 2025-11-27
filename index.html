@@ -6,17 +6,24 @@
     <title>Kosmai</title>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icon.ico">
+
 </head>
 <body>
 
 <header>
     <img src="images/logo_bgrmv.png" class="logo" alt="Kosmiai Logo" />
-    <nav>
-        <a href="#about">About</a>
-        <a href="#team">Team</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+    <nav id="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#team" class="nav-link">Team</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
     </nav>
+    <!-- Mobile Menu Icon -->
+     <div id="mobile-menu" class="mobile-menu">
+        ☰
+    </div>
 </header>
 
 <!-- ABOUT -->
@@ -92,7 +99,7 @@
                 <div class="flip-back">
                     <h3>Sandeep Sohal</h3>
                     <p>
-                        <i>Sandeep is a Technical Lead and consultant with 5+ years of experience building scalable machine learning and data solutions for clients. With an academic background in AI and research in deep learning and computer vision, she bridges advanced technical insight with practical, business-focused implementation across diverse projects.</i>
+                        <i>Sandeep Sohal is a Technical Lead and AI practitioner with experience designing and delivering scalable, end-to-end machine learning, deep learning, and data engineering solutions. She has worked across research labs, startups, and industry teams, developing complete pipelines from data acquisition and preprocessing to model development, deployment, and optimization. Her work spans audio analysis, computer vision, NLP, and chemical modeling, combining strong technical depth with a practical, results-driven approach. Sandeep holds an MSc in Computer Science with a specialization in AI and machine learning, supported by additional training in data science and big data systems. She excels at translating complex problems into real-world applications and consistently builds robust, efficient, and impactful AI systems aligned with organizational goals.</i>
                     </p>
                 </div>
 
@@ -105,28 +112,32 @@
 
 <!-- SERVICES SECTION -->
 <section id="services" class="services-section">
-    <div class="services-container">
+    <div class="section-wrapper">   <!-- Added wrapper to match Teams section -->
 
-        <div class="service-card">
-            <img src="images/service1.jpg" alt="">
-            <h3>Governance & Strategy</h3>
-            <p>Develop comprehensive AI strategies aligned with your business objectives and organizational capabilities.</p>
+        <div class="services-container">
+
+            <div class="service-card">
+                <img src="images/service1.jpg" alt="">
+                <h3>Governance & Strategy</h3>
+                <p>Develop comprehensive AI strategies aligned with your business objectives and organizational capabilities.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="images/service2.jpg" alt="">
+                <h3>Digitization</h3>
+                <p>Guide your organization through successful pilot programs and full-scale deployment of AI solutions.</p>
+            </div>
+
+            <div class="service-card">
+                <img src="images/service3.jpg" alt="">
+                <h3>Enablement & Training</h3>
+                <p>Evaluate your organization's preparedness for AI adoption across infrastructure, data, and talent dimensions.</p>
+            </div>
+
         </div>
-
-        <div class="service-card">
-            <img src="images/service2.jpg" alt="">
-            <h3>Digitization</h3>
-            <p>Guide your organization through successful pilot programs and full-scale deployment of AI solutions.</p>
-        </div>
-
-        <div class="service-card">
-            <img src="images/service3.jpg" alt="">
-            <h3>Enablement & Training</h3>
-            <p>Evaluate your organization's preparedness for AI adoption across infrastructure, data, and talent dimensions.</p>
-        </div>
-
     </div>
 </section>
+
 
 
 

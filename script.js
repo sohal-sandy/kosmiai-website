@@ -4,17 +4,19 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // Mobile navigation toggle
 const mobileMenu = document.getElementById("mobile-menu");
 const navLinks = document.getElementById("nav-links");
-
-if (mobileMenu) {
-  mobileMenu.addEventListener("click", () => {
+mobileMenu.addEventListener("click", () => {
     navLinks.classList.toggle("active");
-  });
-}
 
+    // Change icon between ☰ and X
+    mobileMenu.textContent = navLinks.classList.contains("active") ? "✕" : "☰";
+});
+
+// Close menu when clicking a link
 document.querySelectorAll(".nav-link").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-  });
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        mobileMenu.textContent = "☰";
+    });
 });
 
 // SERVICE BUTTON TOGGLE LOGIC
