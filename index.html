@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="images/icon.ico">
+    <link rel="icon" type="image/jpeg" href="images\Klogo.jpeg">
 
 </head>
 <body>
@@ -143,57 +143,56 @@
 
 <!-- CONTACT -->
 <section id="contact" class="page-section">
-    <h2>Contact Us</h2>
+    <div class="section-wrapper">
+        <h2>Contact Us</h2>
+        <form action="https://formspree.io/f/mdkbrlaq" method="POST" class="contact-grid">
+            <!-- FIRST NAME -->
+            <label for="first_name">First Name (required)</label>
+            <input type="text" id="first_name" name="first_name" required />
+            <!-- LAST NAME -->
+            <label for="last_name">Last Name </label>
+            <input type="text" id="last_name" name="last_name" required />
 
-    <form action="https://formspree.io/f/mdkbrlaq" method="POST" class="contact-grid">
+            <!-- EMAIL -->
+            <label for="email">Email (required)</label>
+            <input type="email" id="email" name="email" required />
 
-        <!-- FIRST NAME -->
-        <label for="first_name">First Name (required)</label>
-        <input type="text" id="first_name" name="first_name" required />
+            <!-- PHONE -->
+            <label for="phone">Phone (required)</label>
+            <input type="text" id="phone" name="phone" required />
 
-        <!-- LAST NAME -->
-        <label for="last_name">Last Name </label>
-        <input type="text" id="last_name" name="last_name" required />
+            <!-- COMPANY NAME -->
+            <label for="company_name">Company Name </label>
+            <input type="text" id="company_name" name="company_name" required />
 
-        <!-- EMAIL -->
-        <label for="email">Email (required)</label>
-        <input type="email" id="email" name="email" required />
+            <!-- COMPANY EMAIL -->
+            <label for="company_email">Company Email </label>
+            <input type="email" id="company_email" name="company_email" required />
 
-        <!-- PHONE -->
-        <label for="phone">Phone (required)</label>
-        <input type="text" id="phone" name="phone" required />
+            <!-- JOB TITLE -->
+            <label for="job_title">Job Title </label>
+            <input type="text" id="job_title" name="job_title" required />
 
-        <!-- COMPANY NAME -->
-        <label for="company_name">Company Name </label>
-        <input type="text" id="company_name" name="company_name" required />
-
-        <!-- COMPANY EMAIL -->
-        <label for="company_email">Company Email </label>
-        <input type="email" id="company_email" name="company_email" required />
-
-        <!-- JOB TITLE -->
-        <label for="job_title">Job Title </label>
-        <input type="text" id="job_title" name="job_title" required />
-
-        <!-- INTERESTED SERVICES -->
-         <label>Interested Services</label>
-         <div class="service-buttons">
-            <button type="button" class="service-btn" data-value="Governance & Strategy">Governance & Strategy</button>
-            <button type="button" class="service-btn" data-value="Digitization">Digitization</button>
-            <button type="button" class="service-btn" data-value="Enablement & Training">Enablement & Training</button>
-        </div>
+            <!-- INTERESTED SERVICES -->
+            <label>Interested Services</label>
+            <div class="service-buttons">
+                <button type="button" class="service-btn" data-value="Governance & Strategy">Governance & Strategy</button>
+                <button type="button" class="service-btn" data-value="Digitization">Digitization</button>
+                <button type="button" class="service-btn" data-value="Enablement & Training">Enablement & Training</button>
+            </div>
         
-        <!-- Hidden input to store selected values for Formspree -->
-         <input type="hidden" name="services" id="servicesInput">
+            <!-- Hidden input to store selected values for Formspree -->
+            <input type="hidden" name="services" id="servicesInput">
         
-        <!-- MESSAGE -->
-        <label for="message">Share with us a bit more detail about your requirements</label>
-        <textarea id="message" name="message" rows="5"></textarea>
+            <!-- MESSAGE -->
+            <label for="message">Share with us a bit more detail about your requirements</label>
+            <textarea id="message" name="message" rows="5"></textarea>
 
-        <!-- SUBMIT -->
-        <button type="submit">Send</button>
+            <!-- SUBMIT -->
+            <button type="submit">Send</button>
 
-    </form>
+        </form>
+    </div>
 </section>
 
 

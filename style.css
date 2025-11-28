@@ -77,7 +77,7 @@ nav a:hover {
 /* HERO SECTION */
 .hero {
     height: 90vh;
-    background: url('images/hero-bg.jpg') no-repeat center/cover;
+    background: url('images/univs.png') no-repeat center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -248,7 +248,7 @@ nav a:hover {
     width: 100%;
     padding: 80px 20px; /* prevents right overflow */
     background: #ffffff00;
-    display: flex;
+    display: block;
     justify-content: center; /* aligns container */
     align-items: center;
 }
@@ -419,6 +419,7 @@ footer {
         text-align: center;
     }
     .logo {
+        margin-left: 0;
         height: 80px;
         transform: none;
     }
@@ -457,6 +458,11 @@ footer {
     /* Show hamburger icon */
     .mobile-menu {
         display: block;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        right: 20px;
     }
 
     /* MOBILE DROPDOWN MENU */
@@ -562,5 +568,20 @@ footer {
 @media (max-width: 700px) {
     .services-container {
         grid-template-columns: 1fr;
+    }
+}
+
+/* GLOBAL MOBILE CENTERING FIX */
+@media (max-width: 768px) {
+    section,
+    .page-section,
+    .services-section,
+    .team-section,
+    .section-wrapper {
+        width: 100%;
+        max-width: 900px; /* keeps proportions similar to desktop cards */
+        margin: 0 auto; /* FULL CENTERING */
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }
