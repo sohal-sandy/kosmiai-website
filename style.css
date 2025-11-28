@@ -122,7 +122,9 @@ nav a:hover {
     max-width: 1200px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    flex-wrap: wrap;
 }
+
 
 .page-section h2 {
     font-size: 2rem;
@@ -140,6 +142,7 @@ nav a:hover {
     width: 100%;
     max-width: 600px;
 }
+
 
 .team-section,
 .services-section {
@@ -245,12 +248,16 @@ nav a:hover {
 
 /* === SERVICES SECTION === */
 .services-section {
+    max-width: 1200px;
     width: 100%;
+    margin: 40px auto !important;
     padding: 80px 20px; /* prevents right overflow */
     background: #ffffff00;
-    display: block;
+    display: flex;
     justify-content: center; /* aligns container */
     align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }
 
 .services-container {
@@ -336,6 +343,8 @@ form {
     text-align: left;
 }
 
+
+
 /* CONTACT FORM FIXES */
 form input,
 form textarea,
@@ -417,7 +426,9 @@ footer {
         width: 100%;
         padding: 40px 20px;
         text-align: center;
+        flex-wrap: wrap;
     }
+
     .logo {
         margin-left: 0;
         height: 80px;
