@@ -339,6 +339,7 @@ form button[type="submit"]:hover {
 /* FOOTER */
 /* ================================== */
 footer {
+    display: flexbox;
     background: #D5A419;
     color: white;
     padding: 20px;
@@ -419,4 +420,18 @@ footer {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+footer .social-media a {
+  color: white;
+  margin: 0 10px;
+  font-size: 40px;
+  text-decoration: none;
+  transition: color 0.3s;
+  justify-content: flex-end !important;
+
+}
+
+footer .social-media a:hover {
+  color: #00aced; 
 }
