@@ -401,6 +401,19 @@ footer {
     #nav-links.active a { font-size: 1.4rem; color: white; padding: 10px 0; }
 }
 
+/* Fix services section alignment on small screens */
+@media (max-width: 768px) {
+    .services-container {
+        padding: 0 !important;
+        margin: 0 auto !important;
+        justify-items: center; /* center items in grid */
+        text-align: center;
+    }
+    .service-flip-card {
+        margin: 0 auto; /* ensure each card is centered */
+    }
+}
+
 /* Ensure form and page sections stay centered */
 .page-section, .section-wrapper, .services-container, .team-container {
     width: 100%;
