@@ -3,9 +3,9 @@ body, html {
     margin: 0;
     padding: 0;
     
-    color: #0d1b2a;
+    color: #24477F;
     scroll-behavior: smooth;
-    background: #6f8790 !important;  /* unified page background */
+    background: #92AAEB;  /* unified page background */
     overflow-x: hidden !important;
     font-family: 'Lora', serif;
 }
@@ -22,9 +22,9 @@ header {
     /* Soft teal nebula gradient with transparency */
     background: linear-gradient(
         to bottom,
-        rgba(25, 51, 65, 0.626) 10%,   /* light mist */
-        rgba(63, 107, 141, 0.55) 50%,  /* teal mid haze */
-        rgba(171, 203, 224, 0.4) 100%   /* deeper nebula */
+        rgba(#cdd7f3) 10%,   /* light mist */
+        rgba(#adbeea) 50%,  /* teal mid haze */
+        rgba(#9eb4f1) 100%   /* deeper nebula */
     );
 
     /* Frosted glass blur */
@@ -63,7 +63,7 @@ header nav {
 nav a {
     margin-left: 32px;
     text-decoration: none;
-    color: #0d1b2a;
+    color: #24477F;
     font-family: 'Lora', serif;
     font-weight: 600;
     font-size: 1.25rem;   /* Increase size */
@@ -72,6 +72,7 @@ nav a {
 
 nav a:hover {
     text-decoration: underline;
+    color: #D5A419;
 }
 
 /* HERO SECTION */
@@ -89,7 +90,7 @@ nav a:hover {
     font-family: 'Lora', serif;
     font-size: 4rem;            /* bigger */
     font-weight: 500;
-    color: #ffffff;
+    color: white;
     max-width: 1000px;
     line-height: 1.25;
     opacity: 0;                /* needed for animation */
@@ -116,7 +117,7 @@ nav a:hover {
     align-items: center;     /* <-- centers form wrapper */
     padding: 80px 20px;
     text-align: center;
-    background: transparent !important;   /* <-- FIX */
+    background: transparent;   /* <-- FIX */
     margin: 40px auto;
     width: 100%;
     max-width: 1200px;
@@ -206,7 +207,7 @@ nav a:hover {
     inset: 0;             /* replaces top/left/width/height */
     backface-visibility: hidden;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.12);
+    background: rgb(229, 228, 228);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     backdrop-filter: blur(4px);
     padding: 20px;
@@ -246,93 +247,147 @@ nav a:hover {
     text-align: center; /* keep names centered */
 }
 
-/* === SERVICES SECTION === */
-.services-section {
+/* Wrapper aligns content like Team section */
+.section-wrapper {
+    width: 90%;
     max-width: 1200px;
-    width: 100%;
-    margin: 40px auto !important;
-    padding: 80px 20px; /* prevents right overflow */
-    background: #ffffff00;
+    margin: 0 auto;
+    text-align: center !important;  /* center h2 and cards container */
+    justify-content: center !important;
+    gap: 50px;
+    
+}
+
+/* SERVICES SECTION FIX */
+#services {
+    padding: 80px 0;
+}
+
+/* Wrapper like Team section */
+#services .section-wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Services container: flex like Team section */
+.services-container {
     display: flex;
-    justify-content: center; /* aligns container */
-    align-items: center;
     flex-wrap: wrap;
+    justify-content: center; /* center cards */
     gap: 50px;
 }
 
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1400px; /* matches team cards */
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 40px;
+/* Flip cards identical to Team section */
+.service-flip-card {
+    width: 330px;
+    height: 460px;
+    perspective: 1200px;
+    position: relative;
+    flex-shrink: 0; /* prevent shrinking */
 }
 
-.service-card {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(4px);
-    padding: 30px 20px;
+/* Inner card */
+.service-flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s ease;
+}
+
+.service-flip-card:hover .service-flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front + back sides */
+.service-flip-front,
+.service-flip-back {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
     border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    color: #fff;
+    background: rgb(229, 228, 228);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.service-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
-}
-
-.service-card img {
-    width: 100%;
-    max-width: 280px;
-    height: auto;
-    margin-bottom: 25px;
-    border-radius: 6px;
-}
-
-.service-card h3 {
-    font-size: 1.4rem;
+/* Front image: square */
+.service-flip-front img {
+    width: 215px;
+    height: 215px;
+    object-fit: cover;
+    border-radius: 12px;
     margin-bottom: 15px;
-    color: #0d1b2a;
 }
 
-.service-card p {
-    font-size: 1rem;
-    color: #243447;
-    line-height: 1.5;
+/* Back side text */
+.service-flip-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    text-align: justify;
 }
 
+/* Center text & hide scrollbar */
+.service-flip-back::-webkit-scrollbar {
+    display: none;
+}
 
+.service-flip-back h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
 
+.service-flip-back p {
+    font-size: 0.97rem;
+    line-height: 1.45;
+    hyphens: auto;
+}
 
-
-/* RESPONSIVE FIXES — Services grid */
-@media (max-width: 1200px) {
+/* RESPONSIVE FIXES — keep same size as Team cards */
+@media (max-width: 600px){
     .services-container {
-        grid-template-columns: repeat(2, 1fr);
+        justify-content: center !important;
+
+    }
+    
+}
+@media (max-width: 900px) {
+    .service-flip-card {
+        width: 330px;  /* fixed like Team cards */
+        height: 460px;
+        justify-content: center;
     }
 }
 
 @media (max-width: 700px) {
-    .services-container {
-        grid-template-columns: 1fr;
+    .service-flip-card {
+        width: 330px;
+        height: 460px;
+        justify-content: center;
     }
 }
-@media (max-width: 700px) {
-    .services-container {
-        grid-template-columns: 1fr;
-        width: 90%;          /* optional: reduces side overflow */
-        margin: 0 auto;      /* center grid */
-    }
 
-    .service-card {
-        margin: 0 auto;      /* center each card */
+@media (max-width: 480px) {
+    .service-flip-card {
+        width: 330px;
+        height: 460px;
+        justify-content: center;
     }
 }
+
+
+/* Add spacing after Team section */
+#team {
+    margin-bottom: 80px;
+}
+
 
 
 
